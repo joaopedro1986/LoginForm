@@ -31,7 +31,7 @@ useEffect(() => {
 
 
 
-  const [user, setUser] = useState({user:"", email: ""})
+  const [user, setUser] = useState({user:""})
   const [error, setError] = useState("");
 
   const Login = details => {
@@ -54,13 +54,14 @@ useEffect(() => {
 
   const Logout = () => {
     setUser({
-      user:"", email: ""
+      user:""
     })
+    setError('')
   }
 
   return (
     <div className="App">
-      {(user.email != "") ? (
+      {(user.user != "") ? (
           <div className="welcome">
               <h2> Welcome, <span>{user.name}</span></h2>
               <button onClick={Logout}>Log Out</button>
